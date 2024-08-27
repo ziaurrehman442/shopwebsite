@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build-and-start": "next build && next start"
+    "build-and-start": "NODE_OPTIONS=--openssl-legacy-provider next build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.4",
