@@ -93,8 +93,8 @@ function Page() {
     return (
         <React.Fragment>
             <BlockFinder />
-            <BlockFeatures layout="top-strip" />
-            <BlockSpace layout="divider-nl" />
+{/*             <BlockFeatures layout="top-strip" />
+            <BlockSpace layout="divider-nl" /> */}
             <BlockProductsCarousel
                 blockTitle={intl.formatMessage({ id: 'HEADER_FEATURED_PRODUCTS' })}
                 layout="grid-5"
