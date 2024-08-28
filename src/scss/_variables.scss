@@ -355,11 +355,11 @@
       $search-spaceship-input-scheme: () !default;
       $search-spaceship-input-scheme: map_merge((
          // normal
-         normal-bg-color:          rgba(#f0f0f0, 0),
+         normal-bg-color:          rgba(#fff, 0),
          normal-font-color:        #262626,
          normal-placeholder-color: #999,
          // hover
-         hover-bg-color:           #f0f0f0,
+         hover-bg-color:           #fff,
          // focus
          focus-bg-color:           #f0f0f0,
       ), $search-spaceship-input-scheme);
