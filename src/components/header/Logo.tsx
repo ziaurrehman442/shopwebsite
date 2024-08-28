@@ -1,7 +1,7 @@
 // react
 import React from 'react';
 // third-party
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 // application
 import AppLink from '~/components/shared/AppLink';
 import { Logosvg } from '~/svg';
@@ -17,9 +17,7 @@ function Logo(props: Props) {
 {/*                     <FormattedMessage id="TEXT_SLOGAN" /> */}
                 </div>
                 <div className="logo__image">
-                    {/* logo */}
-                 <Logosvg />
-                    {/* logo / end */}
+                     <Logosvg />
                 </div>
             </AppLink>
         </div>
