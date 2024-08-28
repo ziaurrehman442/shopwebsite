@@ -9,6 +9,7 @@ import ArrowRoundedRight7x11 from './arrow-rounded-right-7x11.svg';
 import Car20 from './car-20.svg';
 import Cart20 from './cart-20.svg';
 import Cart32 from './cart-32.svg';
+import logosvg from './logo.svg';
 import Check12x9 from './check-12x9.svg';
 import Check100 from './check-100.svg';
 import Compare16 from './compare-16.svg';
