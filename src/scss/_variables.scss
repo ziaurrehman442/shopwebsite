@@ -232,7 +232,7 @@
    $body-scheme-based-on: light !default;
    $body-scheme: () !default;
    $body-scheme: map-merge-all(get-scheme($body-scheme-based-on), (
-       main: #fafafa,
+       main: #f7f1f1,
    ), $body-scheme);
 
    // carousel dots
