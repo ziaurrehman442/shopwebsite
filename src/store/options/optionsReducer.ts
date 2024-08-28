@@ -22,8 +22,8 @@ function optionsSetAll(state: IOptionsState, options: IOptionsData): IOptionsSta
 }
 
 const initialState: IOptionsState = {
-    desktopHeaderLayout: 'spaceship',
-    desktopHeaderScheme: 'two',
+    desktopHeaderLayout: 'spaceship/two',
+    // desktopHeaderScheme: 'two',
     mobileHeaderVariant: 'one',
 };
 
