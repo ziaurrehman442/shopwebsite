@@ -9,10 +9,7 @@ import {
 
 function optionsSetAll(state: IOptionsState, options: IOptionsData): IOptionsState {
     const { desktopHeaderVariant, mobileHeaderVariant } = options;
-    const [
-        desktopHeaderLayout,
-        desktopHeaderScheme,
-    ] = desktopHeaderVariant.split('/') as [IDesktopHeaderLayout, IDesktopHeaderScheme];
+    const [desktopHeaderLayout, desktopHeaderScheme] = desktopHeaderVariant.split('/') as [IDesktopHeaderLayout, IDesktopHeaderScheme];
 
     return {
         desktopHeaderLayout,
@@ -20,6 +17,7 @@ function optionsSetAll(state: IOptionsState, options: IOptionsData): IOptionsSta
         mobileHeaderVariant,
     };
 }
+
 
 const initialState: IOptionsState = {
     desktopHeaderLayout: 'spaceship', // Valid value for IDesktopHeaderLayout
