@@ -23,7 +23,7 @@ function Topbar(props: Props) {
 
     return (
         <div className={rootClasses}>
-            {layout === 'spaceship-start' && (
+{/*             {layout === 'spaceship-start' && (
                 <React.Fragment>
                     <div className="topbar__item-text d-none d-xxl-flex">
                         <FormattedMessage id="TEXT_TOPBAR_PHONE" values={{ phone: '(800) 060-0730' }} />
@@ -91,7 +91,7 @@ function Topbar(props: Props) {
 
                     <DropdownLanguage />
                 </React.Fragment>
-            )}
+            )} */}
         </div>
     );
 }
