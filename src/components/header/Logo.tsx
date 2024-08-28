@@ -4,7 +4,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 // application
 import AppLink from '~/components/shared/AppLink';
-import { logosvg } from '~/svg';
+import { Logosvg } from '~/svg';
 import url from '~/services/url';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {}
@@ -18,7 +18,7 @@ function Logo(props: Props) {
                 </div>
                 <div className="logo__image">
                     {/* logo */}
-                 <logosvg />
+                 <Logosvg />
                     {/* logo / end */}
                 </div>
             </AppLink>
