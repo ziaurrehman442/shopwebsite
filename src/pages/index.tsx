@@ -93,8 +93,8 @@ function Page() {
     return (
         <React.Fragment>
             <BlockFinder />
-{/*             <BlockFeatures layout="top-strip" />
-            <BlockSpace layout="divider-nl" /> */}
+{/*             <BlockFeatures layout="top-strip" /> */}
+            <BlockSpace layout="divider-nl" />
             <BlockProductsCarousel
                 blockTitle={intl.formatMessage({ id: 'HEADER_FEATURED_PRODUCTS' })}
                 layout="grid-5"
@@ -136,7 +136,7 @@ function Page() {
                 links={newArrivalsLinks}
             />
             <BlockSpace layout="divider-nl" />
-            <BlockPosts
+{/*             <BlockPosts
                 blockTitle={intl.formatMessage({ id: 'HEADER_LATEST_NEWS' })}
                 layout="grid"
                 loading={latestPosts.isLoading}
@@ -149,7 +149,7 @@ function Page() {
                 brands={brands.data}
             />
             <BlockSpace layout="divider-nl" className="d-xl-block d-none" />
-            <BlockProductsColumns columns={columns} />
+            <BlockProductsColumns columns={columns} /> */}
             <BlockSpace layout="before-footer" />
         </React.Fragment>
     );
