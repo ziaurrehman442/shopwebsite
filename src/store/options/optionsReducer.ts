@@ -22,9 +22,9 @@ function optionsSetAll(state: IOptionsState, options: IOptionsData): IOptionsSta
 }
 
 const initialState: IOptionsState = {
-    desktopHeaderLayout: 'classic',
-    desktopHeaderScheme: 'two', 
-    mobileHeaderVariant: 'two',
+    desktopHeaderLayout: 'spaceship',
+    desktopHeaderScheme: 'one',
+    mobileHeaderVariant: 'one',
 };
 
 export const OPTIONS_NAMESPACE = 'options';
