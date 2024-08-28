@@ -10,7 +10,7 @@ export type IDesktopHeaderVariant =
 
 export type IDesktopHeaderLayout = 'classic' | 'spaceship';
 
-export type IDesktopHeaderScheme = 'one' | 'two' | 'three' | 'four' | 'five';
+export type IDesktopHeaderScheme = 'two' | 'three' | 'four' | 'five';
 
 export type IMobileHeaderVariant = 'one' | 'two';
 
