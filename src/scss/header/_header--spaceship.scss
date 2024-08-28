@@ -155,9 +155,9 @@
 
         // define scheme
         .header {
-            color: map_get($header-scheme, opposite);
-            background: map_get($header-scheme, main);
-            box-shadow: map_get($header-scheme, shadow);
+            color: map_get('two', opposite);
+            background: map_get('two', main);
+            box-shadow: map_get('two', shadow);
         }
         .header__topbar-start-bg:before {
             background: map_get($topbar-spaceship-start-scheme, main);
@@ -166,7 +166,7 @@
             background: map_get($topbar-spaceship-end-scheme, main);
         }
 
-        @if(map_get(map_get($departments-button-scheme, normal), name) != map_get($header-scheme, name)) {
+        @if(map_get(map_get($departments-button-scheme, normal), name) != map_get('two', name)) {
             .header__navbar-departments {
                 @include direction {
                     #{$margin-inline-end}: 8px;
