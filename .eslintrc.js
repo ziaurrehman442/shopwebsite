@@ -1,67 +1,83 @@
 module.exports = {
-    env: {
-        browser: true,
-        es6: true,
+  env: {
+    browser: true,
+    es6: true,
+    node: true, // Add this for server-side environment
+  },
+  extends: [
+    'airbnb',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'next',
+    'next/core-web-vitals',
+    'prettier',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    extends: 'airbnb',
-    globals: {
-        Atomics: 'readonly',
-        SharedArrayBuffer: 'readonly',
+    ecmaVersion: 2020,
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'jsx-a11y',
+    'react-hooks',
+  ],
+  settings: {
+    'import/resolver': {
+      typescript: {},
     },
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
-        ecmaVersion: 2018,
-        sourceType: 'module',
+    react: {
+      version: 'detect',
     },
-    plugins: [
-        'react',
-        '@typescript-eslint',
+  },
+  rules: {
+    indent: ['error', 4],
+    'react/jsx-indent': ['error', 4],
+    'react/jsx-indent-props': ['error', 4],
+    'react/prop-types': 'off',
+    'react/no-array-index-key': 'off',
+    'react/forbid-prop-types': 'off',
+    'react/no-danger': 'off',
+    'react/require-default-props': 'off',
+    'no-shadow': 'off',
+    'jsx-a11y/label-has-for': 'off', // Deprecated
+    'jsx-a11y/label-has-associated-control': ['error', { assert: 'either' }],
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-fragments': ['error', 'element'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        mjs: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
     ],
-    settings: {
-        'import/resolver': {
-            typescript: {},
-        },
-    },
-    rules: {
-        indent: ['error', 4],
-        'react/jsx-indent': ['error', 4],
-        'react/jsx-indent-props': ['error', 4],
-        'react/prop-types': [0],
-        'react/no-array-index-key': [0],
-        'react/forbid-prop-types': [0],
-        'react/no-danger': [0],
-        'react/require-default-props': [0],
-        'no-shadow': [0],
-        // [Deprecated], https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md
-        'jsx-a11y/label-has-for': [0],
-        'jsx-a11y/label-has-associated-control': [2, { assert: 'either' }],
-        'react/jsx-props-no-spreading': [0],
-        'react/jsx-fragments': ['error', 'element'],
-        'no-unused-vars': 'off',
-        '@typescript-eslint/no-unused-vars': ['error'],
-        'no-use-before-define': 'off',
-        '@typescript-eslint/no-use-before-define': ['error'],
-        'import/extensions': [
-            'error',
-            'ignorePackages',
-            {
-                js: 'never',
-                mjs: 'never',
-                jsx: 'never',
-                ts: 'never',
-                tsx: 'never',
-            },
-        ],
-        'max-len': ['error', 120, 2, {
-            ignoreUrls: true,
-            ignoreComments: false,
-            ignoreRegExpLiterals: true,
-            ignoreStrings: true,
-            ignoreTemplateLiterals: true,
-        }],
-        'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
-    },
+    'max-len': ['error', 120, 2, {
+      ignoreUrls: true,
+      ignoreComments: false,
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+    }],
+    'react/jsx-filename-extension': [1, { extensions: ['.jsx', '.tsx'] }],
+    '@next/next/no-html-link-for-pages': 'off', // Example rule to turn off
+  },
 };
