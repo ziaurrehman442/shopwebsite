@@ -1,16 +1,15 @@
 import React from "react";
-import 'https://auction.drivenappinc.com/Banner.css';
-import 'https://auction.drivenappinc.com/assets/css/font-awesome.min.css';
-import 'https://auction.drivenappinc.com/assets/css/remixicon.css';
-import 'https://auction.drivenappinc.com/assets/fonts/flaticon.css';
-import 'https://auction.drivenappinc.com/assets/css/animate.css';
-import 'https://auction.drivenappinc.com/assets/css/slick.css';
-import 'https://auction.drivenappinc.com/assets/css/off-canvas.css';
-import 'https://auction.drivenappinc.com/assets/css/magnific-popup.css';
-import 'https://auction.drivenappinc.com/assets/css/rsmenu-main.css';
-import 'https://auction.drivenappinc.com/assets/css/rs-spacing.css';
-import 'https://auction.drivenappinc.com/style.css';
-import 'https://auction.drivenappinc.com/assets/css/responsive.css';
+// import 'https://auction.drivenappinc.com/assets/css/font-awesome.min.css';
+// import 'https://auction.drivenappinc.com/assets/css/remixicon.css';
+// import 'https://auction.drivenappinc.com/assets/fonts/flaticon.css';
+// import 'https://auction.drivenappinc.com/assets/css/animate.css';
+// import 'https://auction.drivenappinc.com/assets/css/slick.css';
+// import 'https://auction.drivenappinc.com/assets/css/off-canvas.css';
+// import 'https://auction.drivenappinc.com/assets/css/magnific-popup.css';
+// import 'https://auction.drivenappinc.com/assets/css/rsmenu-main.css';
+// import 'https://auction.drivenappinc.com/assets/css/rs-spacing.css';
+// import 'https://auction.drivenappinc.com/style.css';
+// import 'https://auction.drivenappinc.com/assets/css/responsive.css';
 
 // TypeScript: Declare the functional component
 const Footernew: React.FC = () => {
