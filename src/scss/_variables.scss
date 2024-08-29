@@ -1140,8 +1140,8 @@
    // ----------------------------------------
       $category-card-shadow:                   0 1px 4px rgba(#F6EBD9, .05)                                            !default;
       // overlay
-      $category-card-overlay-color:            rgba(#1a1a1a, .6)                                                    !default;
-      $category-card-overlay-gradient:         linear-gradient(to top, rgba(#1a1a1a, .4) 20%, rgba(#1a1a1a, 0) 80%) !default;
+      $category-card-overlay-color:            rgba(#F6EBD9, .6)                                                    !default;
+      $category-card-overlay-gradient:         linear-gradient(to top, rgba(#1a1a1a, .4) 20%, rgba(#F6EBD9, 0) 80%) !default;
       $category-card-overlay-font-color:       #fff                                                                 !default;
       $category-card-overlay-font-shadow:      0 1px 3px rgba(#F6EBD9, .4)                                             !default;
       $category-card-overlay-link-hover-color: map_get($accent-scheme, main)                                        !default;
