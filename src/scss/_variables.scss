@@ -607,7 +607,7 @@
       $btn-primary-scheme: () !default;
       $btn-primary-scheme: map_merge((
          // normal
-         normal-bg-color:   #333,
+         normal-bg-color:   #0f6d97,
          normal-font-color: map_get($theme-scheme, opposite),
          // hover
          hover-bg-color:    map_get($dark-scheme, main),
