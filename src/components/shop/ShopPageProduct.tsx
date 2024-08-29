@@ -396,7 +396,7 @@ function ShopPageProduct(props: Props) {
                                                     <div className="product__features-link">
                                                         <AppLink href={{ href: { hash: 'product-tab-specification' } }}>
                                                             <FormattedMessage id="LINK_SEE_FULL_SPECIFICATION" />
-                                                            <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white'}} href="https://wa.me/+971545747577">Check Avaliblity</a>
+                                                            <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white', marginLeft: '10px'}} href="https://wa.me/+971545747577">Check Avaliblity</a>
                                                         </AppLink>
                                                     </div>
                                                 </div>
