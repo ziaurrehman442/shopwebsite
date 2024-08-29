@@ -104,11 +104,11 @@ function Page() {
                 currentGroup={featuredProducts.tabs.find((x) => x.current)}
                 onChangeGroup={featuredProducts.handleTabChange}
             />
-            <BlockSpace layout="divider-nl" />
+{/*             <BlockSpace layout="divider-nl" />
             <BlockSale
                 products={blockSale.data}
                 loading={blockSale.isLoading}
-            />
+            /> */}
             <BlockSpace layout="divider-lg" />
 
             {blockZones.map((blockZone, blockZoneIdx) => (
