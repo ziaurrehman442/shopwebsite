@@ -10,6 +10,7 @@ import MobileHeader from '~/components/mobile/MobileHeader';
 import MobileMenu from '~/components/mobile/MobileMenu';
 import Quickview from '~/components/shared/Quickview';
 import { useOptions } from '~/store/options/optionsHooks';
+import Footernew from './footer/Footernew';
 
 interface Props extends PropsWithChildren<{}>{ }
 
@@ -43,7 +44,7 @@ function Layout(props: Props) {
                 </div>
 
                 <footer className="site__footer">
-                    <Footer />
+                    <Footernew />
                 </footer>
             </div>
 

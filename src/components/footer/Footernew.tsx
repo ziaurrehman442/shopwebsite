@@ -13,7 +13,7 @@ import 'https://auction.drivenappinc.com/style.css';
 import 'https://auction.drivenappinc.com/assets/css/responsive.css';
 
 // TypeScript: Declare the functional component
-const Footer: React.FC = () => {
+const Footernew: React.FC = () => {
   return (
     <div>
       <hr />
@@ -151,4 +151,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default Footernew;
