@@ -15,7 +15,7 @@ function Page() {
     return (
         <ShopPageShop
             layout="grid"
-            gridLayout="grid-4-sidebar"
+            gridLayout="grid-3-sidebar"
             sidebarPosition="start"
         />
     );
