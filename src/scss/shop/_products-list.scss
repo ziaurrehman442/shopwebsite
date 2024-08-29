@@ -17,7 +17,7 @@
         width: calc((100% - #{$columns * $gutter}) / #{$columns});
     }
 }
-$local-columns: 4;
+$local-columns: 3;
 $local-gutter: 20px;
 
 
