@@ -1,13 +1,13 @@
 import React from "react";
-import './assets/css/font-awesome.min.css';
-import './assets/css/remixicon.css';
+// import './assets/css/font-awesome.min.css';
+// import './assets/css/remixicon.css';
 import './assets/fonts/flaticon.css';
 // import './assets/css/animate.css';
-import './assets/css/slick.css';
-import './assets/css/off-canvas.css';
-import './assets/css/magnific-popup.css';
-import './assets/css/rsmenu-main.css';
-import './assets/css/rs-spacing.css';
+// import './assets/css/slick.css';
+// import './assets/css/off-canvas.css';
+// import './assets/css/magnific-popup.css';
+// import './assets/css/rsmenu-main.css';
+// import './assets/css/rs-spacing.css';
 import './style.css';
 import './assets/css/responsive.css';
 
