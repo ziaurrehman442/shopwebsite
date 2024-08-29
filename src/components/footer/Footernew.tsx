@@ -34,7 +34,17 @@ const Footernew: React.FC = () => {
                     </div>
                     <div className="address-text">
                       <div className="text">
-                        <a href="https://wa.me/+97126459507">+97126459507</a>
+                        <a href="https://wa.me/+971545127066">+971545127066</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="address-box mb-12">
+                    <div className="address-icon">
+                      <i className="ri-whatsapp-line"></i>
+                    </div>
+                    <div className="address-text">
+                      <div className="text">
+                        <a href="https://wa.me/+971545747577">+971545747577</a>
                       </div>
                     </div>
                   </div>
