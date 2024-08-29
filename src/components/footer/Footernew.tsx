@@ -2,7 +2,7 @@ import React from "react";
 import './assets/css/font-awesome.min.css';
 import './assets/css/remixicon.css';
 import './assets/fonts/flaticon.css';
-import './assets/css/animate.css';
+// import './assets/css/animate.css';
 import './assets/css/slick.css';
 import './assets/css/off-canvas.css';
 import './assets/css/magnific-popup.css';
