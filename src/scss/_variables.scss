@@ -170,7 +170,7 @@
       name:         accent,
       // colors
       main:         #ffdf40,
-      opposite:     #262626,
+      opposite:     #F6EBD9,
       opposite-alt: #734c3f,
       muted:        #99752e,
       // states
@@ -206,7 +206,7 @@
       name:         light,
       // colors
       main:         #fff,
-      opposite:     #262626,
+      opposite:     #F6EBD9,
       opposite-alt: #6c757d,
       muted:        #999,
       // states
@@ -1065,7 +1065,7 @@
    // ----------------------------------------
       $post-header-category-link-scheme:     $theme-scheme                 !default;
       // overlay
-      $post-header-overlay-bg-color:         #262626                       !default;
+      $post-header-overlay-bg-color:         #F6EBD9                       !default;
       $post-header-overlay-font-color:       #fff                          !default;
       $post-header-overlay-font-shadow:      0 1px 5px rgba(#000, .25)     !default;
       $post-header-overlay-link-hover-color: map_get($accent-scheme, main) !default;
@@ -1242,7 +1242,7 @@
    // ----------------------------------------
    // -- .block-sale
    // ----------------------------------------
-      $block-sale-overlay-bg:        rgba(#262626, .8)            !default;
+      $block-sale-overlay-bg:        rgba(#F6EBD9, .8)            !default;
       // dots
       $block-sale-dot-normal-color:  rgba(#fff, .3)               !default;
       $block-sale-dot-hover-color:   rgba(#fff, .5)               !default;
