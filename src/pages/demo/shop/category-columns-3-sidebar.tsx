@@ -22,7 +22,7 @@ function Page(props: Props) {
 
     return (
         <ShopPageCategory
-            layout="columns-3-sidebar"
+            layout="columns-4-sidebar"
             subcategories={subcategories}
         />
     );
