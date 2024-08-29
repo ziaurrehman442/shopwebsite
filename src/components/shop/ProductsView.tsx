@@ -107,12 +107,13 @@ function ProductsView(props: Props) {
 
     const productListClasses = classNames(
         'products-view__list',
-        'products-list',
+        'products-list','products-list--grid--3',
         {
-            'products-list--grid--6': gridLayout === 'grid-6-full',
-            'products-list--grid--5': gridLayout === 'grid-5-full',
-            'products-list--grid--4': ['grid-4-full', 'grid-4-sidebar'].includes(gridLayout),
-            'products-list--grid--3': gridLayout === 'grid-3-sidebar',
+            // 'products-list--grid--6': gridLayout === 'grid-6-full',
+            // 'products-list--grid--5': gridLayout === 'grid-5-full',
+            // 'products-list--grid--4': ['grid-4-full', 'grid-4-sidebar'].includes(gridLayout),
+            // 'products-list--grid--3': gridLayout === 'grid-3-sidebar',
+            
         },
     );
 
