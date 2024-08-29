@@ -607,7 +607,7 @@
       $btn-primary-scheme: () !default;
       $btn-primary-scheme: map_merge((
          // normal
-         normal-bg-color:   map_get($theme-scheme, main),
+         normal-bg-color:  #F6EBD9,
          normal-font-color: map_get($theme-scheme, opposite),
          // hover
          hover-bg-color:    map_get($dark-scheme, main),
@@ -1295,3 +1295,5 @@
 // ----------------------------------------
    $barely-black: rgba(#000, .01) !default;
    $barely-white: rgba(#fff, .01) !default;
+
+
