@@ -397,7 +397,7 @@ function ShopPageProduct(props: Props) {
                                                         <p style={{color: 'red'}}> “” Please confirm item availability before adding to CART “” </p>
                                                         <AppLink href={{ href: { hash: 'product-tab-specification' } }}>
                                                             <FormattedMessage id="LINK_SEE_FULL_SPECIFICATION" />
-                                                            <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white', marginLeft: '10px'}} href="https://wa.me/+971545747577"><span><img src='./images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
+                                                            <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white', marginLeft: '10px'}} href="https://wa.me/+971545747577"><span><img src='/images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
                                                         </AppLink>
                                                     </div>
                                                 </div>
