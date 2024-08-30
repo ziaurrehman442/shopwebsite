@@ -108,8 +108,8 @@ function VehicleSelect(props: Props) {
                     );
                 })}
             </div>
-            <div className="vehicle-select__divider">
-                <FormattedMessage id="TEXT_OR" />
+            <div className="vehicle-select__divider" style={{marginTop: '10px', marginBottom: '100px'}}>
+                OR
             </div>
             <div className={classNames('vehicle-select__item', { 'vehicle-select__item--loading': vinIsLoading })}>
                 <div className="vehicle-select__item-input">
