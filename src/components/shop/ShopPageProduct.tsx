@@ -245,6 +245,7 @@ function ShopPageProduct(props: Props) {
                         />
                     </div>
                     <div className="product__actions-item product__actions-item--addtocart">
+                    <p style={{color: 'red'}}> “” Please confirm item availability before adding to CART “” </p>
                         <button
                             type="submit"
                             className={classNames('btn', 'btn-primary', 'btn-lg', 'btn-block', {
@@ -253,6 +254,8 @@ function ShopPageProduct(props: Props) {
                         >
                             <FormattedMessage id="BUTTON_ADD_TO_CART" />
                         </button>
+                        <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white', marginLeft: '10px'}} href="https://wa.me/+971545747577"><span><img src='/images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
+                                        
                     </div>
                     <div className="product__actions-divider" />
                 </React.Fragment>
@@ -372,8 +375,8 @@ function ShopPageProduct(props: Props) {
                                                     {product.excerpt}
                                                 </div>
                                             )}
-{/* 
-                                            {featuredAttributes.length > 0 && ( */}
+
+                                            {featuredAttributes.length > 0 && (
                                                 <div className="product__features">
                                                     <div className="product__features-title">
                                                         <FormattedMessage id="TEXT_KEY_FEATURES" />
@@ -394,14 +397,12 @@ function ShopPageProduct(props: Props) {
 
                                                     </ul>
                                                     <div className="product__features-link">
-                                                        <p style={{color: 'red'}}> “” Please confirm item availability before adding to CART “” </p>
                                                         <AppLink href={{ href: { hash: 'product-tab-specification' } }}>
                                                             <FormattedMessage id="LINK_SEE_FULL_SPECIFICATION" />
-                                                            <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white', marginLeft: '10px'}} href="https://wa.me/+971545747577"><span><img src='/images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
                                                         </AppLink>
                                                     </div>
                                                 </div>
-                                            {/* )} */}
+                                            )}
                                         </div>
                                     )}
 
