@@ -232,7 +232,7 @@ function ShopPageProduct(props: Props) {
     wordWrap: 'break-word', // Allows long words to break to the next line
     overflowWrap: 'break-word', // Ensures long strings break onto the next line
     textAlign: 'center', // Optional: Centers the text within the container
-    padding: '0 10px' // Optional: Adds padding to prevent the text from touching the edges
+    padding: '5px 5px' // Optional: Adds padding to prevent the text from touching the edges
 }}>
     “” Please confirm item availability before adding to CART “”
 </p>
