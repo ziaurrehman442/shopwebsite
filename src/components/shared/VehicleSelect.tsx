@@ -14,67 +14,73 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 
 function VehicleSelect(props: Props) {
     const cancelVinRequest = useRef(() => {});
-const [vinIsLoading, setVinIsLoading] = useState(false);
-const [vinError, setVinError] = useState<unknown | null>(null);
-const [vehicleByVin, setVehicleByVin] = useState<IVehicle | null>(null);
-const intl = useIntl();
+    const [vinIsLoading, setVinIsLoading] = useState(false);
+    const [vinError, setVinError] = useState<unknown | null>(null);
+    const [vehicleByVin, setVehicleByVin] = useState<IVehicle | null>(null);
+    const [vinValue, setVinValue] = useState(''); // New state for VIN value
+    const intl = useIntl();
 
     const { onVehicleChange, className, ...rootProps } = props;
     const rootClasses = classNames('vehicle-select', className);
     const form = useVehicleForm({
         onChange: onVehicleChange,
     });
+
+    // Update handleVinChange to only update vinValue
     const handleVinChange = (event: React.FormEvent<HTMLInputElement>) => {
+        setVinValue(event.currentTarget.value.trim());
+    };
+
+    // New function to handle search button click
+    const handleVinSearch = () => {
         let canceled = false;
-    
+
         cancelVinRequest.current();
         cancelVinRequest.current = () => {
             canceled = true;
         };
-    
-        const value = event.currentTarget.value.trim();
-    
-        setVinIsLoading(value !== '');
-    
-        if (value === '') {
+
+        setVinIsLoading(vinValue !== '');
+
+        if (vinValue === '') {
             setVehicleByVin(null);
             setVinError(null);
             return;
         }
-    
+
         setTimeout(async () => {
-            if (value === '' || canceled) {
+            if (vinValue === '' || canceled) {
                 return;
             }
-    
+
             try {
-                const vehicle = await vehicleApi.getVehicleByVin(value);
-    
+                const vehicle = await vehicleApi.getVehicleByVin(vinValue);
+
                 if (canceled) {
                     return;
                 }
-    
+
                 setVehicleByVin(vehicle);
                 setVinError(null);
             } catch (error) {
                 if (canceled) {
                     return;
                 }
-    
+
                 setVehicleByVin(null);
                 setVinError(error);
             }
-    
+
             setVinIsLoading(false);
         }, 350);
     };
-    
+
     return (
         <div className={rootClasses} {...rootProps}>
             <div className="vehicle-select__list">
                 {form.items.map((item, itemIdx) => {
-                    const options = item.options as Array<2 | string | IVehicle>;
-    
+                    const options = item.options as Array<number | string | IVehicle>;
+
                     return (
                         <div
                             key={itemIdx}
@@ -114,8 +120,17 @@ const intl = useIntl();
                         aria-label={intl.formatMessage({ id: 'INPUT_VIN_LABEL' })}
                         placeholder={intl.formatMessage({ id: 'INPUT_VIN_PLACEHOLDER' })}
                         onInput={handleVinChange}
-                        style={{background: 'white'}}
+                        style={{ background: 'white' }}
                     />
+                    <button
+                        type="button"
+                        className="btn btn-primary"
+                        onClick={handleVinSearch}
+                        disabled={vinIsLoading}
+                        style={{ marginLeft: '10px' }}
+                    >
+                        Search
+                    </button>
                     <div className="vehicle-select__item-loader" />
                 </div>
                 {(vehicleByVin || vinError !== null) && (
@@ -138,7 +153,6 @@ const intl = useIntl();
             </div>
         </div>
     );
-    
 }
 
 export default VehicleSelect;
