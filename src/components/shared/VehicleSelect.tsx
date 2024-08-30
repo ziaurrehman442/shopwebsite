@@ -122,15 +122,6 @@ function VehicleSelect(props: Props) {
                         onInput={handleVinChange}
                         style={{ background: 'white' }}
                     />
-                    <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={handleVinSearch}
-                        disabled={vinIsLoading}
-                        style={{ marginLeft: '10px' }}
-                    >
-                        Search
-                    </button>
                     <div className="vehicle-select__item-loader" />
                 </div>
                 {(vehicleByVin || vinError !== null) && (

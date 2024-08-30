@@ -50,6 +50,7 @@ function BlockFinder() {
                     <VehicleSelect className="block-finder__select" onVehicleChange={setVehicle} />
 
 
+                    <br /><br />
                     <button className="block-finder__button" type="submit">
                         <FormattedMessage id="BUTTON_BLOCK_FINDER_SEARCH" />
                     </button>
