@@ -365,15 +365,15 @@ function ShopPageProduct(props: Props) {
                                         </div>
                                     </div>
 
-                                    
+                                    {layout === 'full' && (
                                         <div className="product__main">
                                             {product.excerpt && (
                                                 <div className="product__excerpt">
                                                     {product.excerpt}
                                                 </div>
                                             )}
-
-                                            {featuredAttributes.length > 0 && (
+{/* 
+                                            {featuredAttributes.length > 0 && ( */}
                                                 <div className="product__features">
                                                     <div className="product__features-title">
                                                         <FormattedMessage id="TEXT_KEY_FEATURES" />
@@ -401,9 +401,9 @@ function ShopPageProduct(props: Props) {
                                                         </AppLink>
                                                     </div>
                                                 </div>
-                                            )}
+                                            {/* )} */}
                                         </div>
-                                    
+                                    )}
 
                                     <div className="product__info">
                                         <FormProvider {...productForm.methods}>
