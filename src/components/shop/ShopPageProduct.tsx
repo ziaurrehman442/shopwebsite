@@ -226,7 +226,7 @@ function ShopPageProduct(props: Props) {
 
     const productActions = (
         <div className="product__actions">
-            <p style={{color: 'red', maxWidth: '100%', position:'relative'}}> “” Please confirm item availability before adding to CART “” </p>
+            <p style={{color: 'red', maxWidth: '200px'}}> “” Please confirm item availability before adding to CART “” </p>
             {product.stock !== 'out-of-stock' && (
                 <React.Fragment>
                     <div className="product__actions-item product__actions-item--quantity">
@@ -255,7 +255,7 @@ function ShopPageProduct(props: Props) {
                             <FormattedMessage id="BUTTON_ADD_TO_CART" />
                         </button>              
                     </div>
-                    <a className='btn btn-primary btn-lg btn-block py-3' style={{background: '#3DDC55', color: 'white'}} href="https://wa.me/+971545747577"><span><img src='/images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
+                    <a className='btn btn-primary btn-lg btn-block my-3' style={{background: '#3DDC55', color: 'white'}} href="https://wa.me/+971545747577"><span><img src='/images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
 
                     <div className="product__actions-divider" />
                 </React.Fragment>
