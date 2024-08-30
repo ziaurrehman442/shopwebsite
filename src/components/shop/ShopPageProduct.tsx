@@ -226,6 +226,7 @@ function ShopPageProduct(props: Props) {
 
     const productActions = (
         <div className="product__actions">
+            <p style={{color: 'red'}}> “” Please confirm item availability before adding to CART “” </p>
             {product.stock !== 'out-of-stock' && (
                 <React.Fragment>
                     <div className="product__actions-item product__actions-item--quantity">
@@ -245,7 +246,6 @@ function ShopPageProduct(props: Props) {
                         />
                     </div>
                     <div className="product__actions-item product__actions-item--addtocart">
-                    <p style={{color: 'red'}}> “” Please confirm item availability before adding to CART “” </p>
                         <button
                             type="submit"
                             className={classNames('btn', 'btn-primary', 'btn-lg', 'btn-block', {
@@ -253,10 +253,10 @@ function ShopPageProduct(props: Props) {
                             })}
                         >
                             <FormattedMessage id="BUTTON_ADD_TO_CART" />
-                        </button>
-                        <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white', marginLeft: '10px'}} href="https://wa.me/+971545747577"><span><img src='/images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
-                                        
+                        </button>              
                     </div>
+                    <a className='btn btn-primary' style={{background: '#3DDC55', color: 'white', marginLeft: '10px'}} href="https://wa.me/+971545747577"><span><img src='/images/whatsapp.svg' alt="whatsappicon" /></span>Check Avaliblity</a>
+
                     <div className="product__actions-divider" />
                 </React.Fragment>
             )}
