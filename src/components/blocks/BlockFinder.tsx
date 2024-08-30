@@ -46,12 +46,12 @@ function BlockFinder() {
                 <div className="block-finder__subtitle">
                     <FormattedMessage id="TEXT_BLOCK_FINDER_SUBTITLE" />
                 </div>
-                <form className="block-finder__form" onSubmit={onSubmit}>
+                <form className="block-finder__form" style={{display: 'contents'}} onSubmit={onSubmit}>
                     <VehicleSelect className="block-finder__select" style={{width: '100%' }} onVehicleChange={setVehicle} />
-
+                    <div>
                     <button className="block-finder__button" type="submit">
                         <FormattedMessage id="BUTTON_BLOCK_FINDER_SEARCH" />
-                    </button>
+                    </button></div>
                 </form>
             </div>
         </div>
