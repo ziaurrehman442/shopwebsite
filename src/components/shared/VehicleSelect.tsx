@@ -108,7 +108,7 @@ function VehicleSelect(props: Props) {
                     );
                 })}
             </div>
-            <div className="vehicle-select__divider" style={{marginTop: '10px', marginBottom: '100px'}}>
+            <div className="vehicle-select__divider" style={{marginTop: '10px', marginBottom: '10px'}}>
                 OR
             </div>
             <div className={classNames('vehicle-select__item', { 'vehicle-select__item--loading': vinIsLoading })}>
