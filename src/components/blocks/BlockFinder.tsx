@@ -10,6 +10,7 @@ import VehicleSelect from '~/components/shared/VehicleSelect';
 import { baseUrl } from '~/services/utils';
 import { hrefToRouterArgs } from '~/services/router';
 import { IVehicle } from '~/interfaces/vehicle';
+import VehiclePickerModal from '../shared/VehiclePickerModal';
 
 function BlockFinder() {
     const router = useRouter();
@@ -47,6 +48,7 @@ function BlockFinder() {
                 </div>
                 <form className="block-finder__form" onSubmit={onSubmit}>
                     <VehicleSelect className="block-finder__select" onVehicleChange={setVehicle} />
+
 
                     <button className="block-finder__button" type="submit">
                         <FormattedMessage id="BUTTON_BLOCK_FINDER_SEARCH" />
