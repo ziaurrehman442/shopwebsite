@@ -1140,12 +1140,12 @@
    // ----------------------------------------
       $category-card-shadow:                   0 1px 4px rgba(#cca356, .05)                                            !default;
       // overlay
-      $category-card-overlay-color:            rgba(transparent)                                                    !default;
-      $category-card-overlay-gradient:         linear-gradient(to top, rgba(transparent) 20%, rgba(transparent) 80%) !default;
+      $category-card-overlay-color:            transparent                                                               !default;
+      $category-card-overlay-gradient:         linear-gradient(to top, transparent 20%, transparent 80%) !default;
       $category-card-overlay-font-color:       #fff                                                                 !default;
-      $category-card-overlay-font-shadow:      0 1px 3px rgba(transparent)                                             !default;
+      $category-card-overlay-font-shadow:      0 1px 3px transparent                                             !default;
       $category-card-overlay-link-hover-color: map_get($accent-scheme, main)                                        !default;
-      $category-card-hover-overlay-bg-color:   rgba(transparent)                                                    !default;
+      $category-card-hover-overlay-bg-color:   transparent                                                   !default;
 
    // ----------------------------------------
    // -- .quickview
@@ -1254,8 +1254,8 @@
    // ----------------------------------------
       $block-banners-font-color:              #fff                                          !default;
       $block-banners-title-scheme:            $accent-scheme                                !default;
-      $block-banners-overlay-gradient:        rgba(transparent) 10%, rgba(transparent) 100%  !default;
-      $block-banners-overlay-mobile-gradient: rgba(transparent) 10%, rgba(transparent) 100% !default;
+      $block-banners-overlay-gradient:        transparent 10%, transparent 100%  !default;
+      $block-banners-overlay-mobile-gradient: transparent 10%, transparent 100% !default;
 
    // ----------------------------------------
    // -- .block-features
