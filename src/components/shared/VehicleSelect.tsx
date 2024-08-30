@@ -114,6 +114,7 @@ const intl = useIntl();
                         aria-label={intl.formatMessage({ id: 'INPUT_VIN_LABEL' })}
                         placeholder={intl.formatMessage({ id: 'INPUT_VIN_PLACEHOLDER' })}
                         onInput={handleVinChange}
+                        style={{background: 'white'}}
                     />
                     <div className="vehicle-select__item-loader" />
                 </div>
