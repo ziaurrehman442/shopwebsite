@@ -1212,7 +1212,7 @@
    // -- .block-finder
    // ----------------------------------------
       $block-finder-bg-color:                   #fff                     !default;
-      $block-finder-font-color:                 #fff                     !default;
+      $block-finder-font-color:                 #262626                  !default;
       $block-finder-font-shadow:                0 1px 3px rgba(#fff, .2) !default;
       // select
       $block-finder-select-bg-color:            #fff                     !default;
@@ -1254,8 +1254,8 @@
    // ----------------------------------------
       $block-banners-font-color:              #F6EBD9                                          !default;
       $block-banners-title-scheme:            $accent-scheme                                !default;
-      $block-banners-overlay-gradient:        rgba(#F6EBD9, .98) 40%, rgba(#F6EBD9, 0) 60%  !default;
-      $block-banners-overlay-mobile-gradient: rgba(#F6EBD9, .98) 40%, rgba(#F6EBD9, 0) 60% !default;
+      $block-banners-overlay-gradient:        rgba(#F6EBD9, .98) 10%, rgba(#F6EBD9, 0) 100%  !default;
+      $block-banners-overlay-mobile-gradient: rgba(#F6EBD9, .98) 10%, rgba(#F6EBD9, 0) 100% !default;
 
    // ----------------------------------------
    // -- .block-features
