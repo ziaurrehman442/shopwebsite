@@ -232,7 +232,7 @@
    $body-scheme-based-on: light !default;
    $body-scheme: () !default;
    $body-scheme: map-merge-all(get-scheme($body-scheme-based-on), (
-       main: #F6EBD9,
+       main: #fff,
    ), $body-scheme);
 
    // carousel dots
@@ -1211,7 +1211,7 @@
    // ----------------------------------------
    // -- .block-finder
    // ----------------------------------------
-      $block-finder-bg-color:                   #333                     !default;
+      $block-finder-bg-color:                   #fff                     !default;
       $block-finder-font-color:                 #fff                     !default;
       $block-finder-font-shadow:                0 1px 3px rgba(#000, .2) !default;
       // select
@@ -1252,10 +1252,10 @@
    // ----------------------------------------
    // -- .block-banners
    // ----------------------------------------
-      $block-banners-font-color:              #fff                                          !default;
+      $block-banners-font-color:              #F6EBD9                                          !default;
       $block-banners-title-scheme:            $accent-scheme                                !default;
-      $block-banners-overlay-gradient:        rgba(#1a1a1a, .98) 25%, rgba(#1a1a1a, 0) 90%  !default;
-      $block-banners-overlay-mobile-gradient: rgba(#1a1a1a, .98) 35%, rgba(#1a1a1a, 0) 100% !default;
+      $block-banners-overlay-gradient:        rgba(#F6EBD9, .98) 25%, rgba(#F6EBD9, 0) 90%  !default;
+      $block-banners-overlay-mobile-gradient: rgba(#F6EBD9, .98) 35%, rgba(#F6EBD9, 0) 100% !default;
 
    // ----------------------------------------
    // -- .block-features
