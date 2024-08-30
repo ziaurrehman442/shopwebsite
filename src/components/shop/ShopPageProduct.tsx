@@ -226,9 +226,16 @@ function ShopPageProduct(props: Props) {
 
     const productActions = (
         <div className="product__actions">
-            <div style={{color: 'red'}}> 
-                “” Please confirm item availability before adding to CART “” 
-            </div>
+            <p style={{
+    color: 'red', 
+    whiteSpace: 'normal', // Ensures the text wraps to the next line
+    wordWrap: 'break-word', // Allows long words to break to the next line
+    overflowWrap: 'break-word', // Ensures long strings break onto the next line
+    textAlign: 'center', // Optional: Centers the text within the container
+    padding: '0 10px' // Optional: Adds padding to prevent the text from touching the edges
+}}>
+    “” Please confirm item availability before adding to CART “”
+</p>
             {product.stock !== 'out-of-stock' && (
                 <React.Fragment>
                     <div className="product__actions-item product__actions-item--quantity">
