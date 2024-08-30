@@ -226,7 +226,7 @@ function ShopPageProduct(props: Props) {
 
     const productActions = (
         <div className="product__actions">
-            <p style={{color: 'red'}} style={{maxWidth: '100%'}}> “” Please confirm item availability before adding to CART “” </p>
+            <p style={{color: 'red', maxWidth: '100%'}}> “” Please confirm item availability before adding to CART “” </p>
             {product.stock !== 'out-of-stock' && (
                 <React.Fragment>
                     <div className="product__actions-item product__actions-item--quantity">
