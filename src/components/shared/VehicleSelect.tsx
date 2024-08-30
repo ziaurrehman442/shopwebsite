@@ -73,7 +73,7 @@ const intl = useIntl();
         <div className={rootClasses} {...rootProps}>
             <div className="vehicle-select__list">
                 {form.items.map((item, itemIdx) => {
-                    const options = item.options as Array<number | string | IVehicle>;
+                    const options = item.options as Array<2 | string | IVehicle>;
     
                     return (
                         <div
