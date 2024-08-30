@@ -365,7 +365,7 @@ function ShopPageProduct(props: Props) {
                                         </div>
                                     </div>
 
-                                    {layout === 'full' && (
+                                    
                                         <div className="product__main">
                                             {product.excerpt && (
                                                 <div className="product__excerpt">
@@ -403,7 +403,7 @@ function ShopPageProduct(props: Props) {
                                                 </div>
                                             )}
                                         </div>
-                                    )}
+                                    
 
                                     <div className="product__info">
                                         <FormProvider {...productForm.methods}>
