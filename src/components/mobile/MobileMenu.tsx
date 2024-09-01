@@ -50,7 +50,7 @@ function MobileMenu() {
 
                 <MobileMenuConveyor controllerRef={conveyorRef}>
                     <MobileMenuPanel label="Menu">
-                        <MobileMenuSettings />
+                        {/* <MobileMenuSettings /> */}
                         <div className="mobile-menu__divider" />
                         <MobileMenuIndicators />
                         <div className="mobile-menu__divider" />

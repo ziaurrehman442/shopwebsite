@@ -89,5 +89,4 @@ function MainMenu() {
         </div>
     );
 }
-
 export default MainMenu;

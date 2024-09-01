@@ -52,7 +52,6 @@ function MobileMenuPanelController(props: Props) {
                 </div>
             </div>
         );
-
         return ReactDOM.createPortal(panel, conveyor.containerRef.current);
     };
 
