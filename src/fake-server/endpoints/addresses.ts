@@ -4,9 +4,44 @@ import { clone, delayResponse } from '~/fake-server/utils';
 import { IAddress } from '~/interfaces/address';
 import { IEditAddressData } from '~/api/base';
 
-export function getDefaultAddress(): Promise<IAddress> {
-    return Promise.resolve(clone(addresses.find((x) => x.default) || null));
+
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://[::1]:5000/api/';
+export async function getDefaultAddress(): Promise<IAddress | null> {
+    // Get email from localStorage
+    const email = localStorage.getItem('email');
+
+    if (!email) {
+        return Promise.reject(new Error('Email not found in localStorage'));
+    }
+
+    // API endpoint to send the email and get the default address
+    
+
+    try {
+        // Make the API call with the email
+        const response = await fetch(`${apiUrl}me`, {
+            method: 'POST', // Change to GET or POST depending on API requirements
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch address from API');
+        }
+
+        const data = await response.json();
+        console.log(data);
+        // Assuming the API returns an array of addresses and finds the default one
+        const defaultAddress = data.addresses.find((x: IAddress) => x.default) || null;
+
+        return Promise.resolve(defaultAddress);
+    } catch (err) {
+        return Promise.reject(err);
+    }
 }
+
 
 export function getAddress(addressId: number): Promise<IAddress> {
     return Promise.resolve(clone(addresses.find((x) => x.id === addressId) || null));
