@@ -224,9 +224,18 @@ export function getSearchSuggestions(
         ...options,
     };
 
-    const resultProducts = dbProducts.filter((x) => x.name.toLowerCase().includes(queryVal));
-    const resultCategories = shopCategoriesList.filter((x) => x.name.toLowerCase().includes(queryVal));
+    const resultProducts = dbProducts.filter((x) => {
+        console.log(x.name);
+        // x.name && typeof x.name === 'string' && x.name.toLowerCase().includes(queryVal.toLowerCase());
 
+});
+      
+      const resultCategories = shopCategoriesList.filter((x) => {
+
+        console.log(x.name);
+        // x.name && typeof x.name === 'string' && x.name.toLowerCase().includes(queryVal.toLowerCase());
+}
+      );
     return Promise.resolve({
         products: resultProducts.slice(0, optionsVal.limitProducts),
         categories: resultCategories.slice(0, optionsVal.limitCategories).map((x) => prepareCategory(x)),

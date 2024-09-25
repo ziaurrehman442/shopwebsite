@@ -14,50 +14,56 @@ export function getOrderToken(orderId: number): string {
 
 function makeOrders(defs: IOrderDef[]): IOrder[] {
     return defs.map((def) => {
-        const id = getNextOrderId();
-        const items = def.items.map((orderItemDef) => {
-            const product = products.find((x) => x.slug === orderItemDef.product);
+        try {
+            const id = getNextOrderId();
+            const items = def.items.map((orderItemDef) => {
+                const product = products.find((x) => x.slug === orderItemDef.product);
 
-            if (!product) {
-                throw new Error('Product not found');
-            }
+                if (!product) {
+                    throw new Error(`Product not found: ${orderItemDef.product}`);
+                }
+
+                return {
+                    product: JSON.parse(JSON.stringify(product)),
+                    options: orderItemDef.options,
+                    price: product.price,
+                    quantity: orderItemDef.quantity,
+                    total: product.price * orderItemDef.quantity,
+                };
+            });
+
+            const quantity = items.reduce((acc, item) => acc + item.quantity, 0);
+            const subtotal = items.reduce((acc, item) => acc + item.total, 0);
+
+            const totals: IOrderTotal[] = [
+                { title: 'SHIPPING', price: 25 },
+                { title: 'TAX', price: Math.round(subtotal * 0.2) },
+            ];
+
+            const total = subtotal + totals.reduce((acc, x) => acc + x.price, 0);
 
             return {
-                product: JSON.parse(JSON.stringify(product)),
-                options: orderItemDef.options,
-                price: product.price,
-                quantity: orderItemDef.quantity,
-                total: product.price * orderItemDef.quantity,
+                id,
+                token: getOrderToken(id),
+                number: def.number,
+                createdAt: def.createdAt,
+                payment: def.payment,
+                status: def.status,
+                items,
+                quantity,
+                subtotal,
+                totals,
+                total,
+                shippingAddress: JSON.parse(JSON.stringify(addresses[0])),
+                billingAddress: JSON.parse(JSON.stringify(addresses[0])),
             };
-        });
-
-        const quantity = items.reduce((acc, item) => acc + item.quantity, 0);
-        const subtotal = items.reduce((acc, item) => acc + item.total, 0);
-
-        const totals: IOrderTotal[] = [
-            { title: 'SHIPPING', price: 25 },
-            { title: 'TAX', price: Math.round(subtotal * 0.2) },
-        ];
-
-        const total = subtotal + totals.reduce((acc, x) => acc + x.price, 0);
-
-        return {
-            id,
-            token: getOrderToken(id),
-            number: def.number,
-            createdAt: def.createdAt,
-            payment: def.payment,
-            status: def.status,
-            items,
-            quantity,
-            subtotal,
-            totals,
-            total,
-            shippingAddress: JSON.parse(JSON.stringify(addresses[0])),
-            billingAddress: JSON.parse(JSON.stringify(addresses[0])),
-        };
-    });
+        } catch (error) {
+            console.error('Error creating order:', error);
+            return null; // Return null for failed orders
+        }
+    }).filter(Boolean); // Remove null entries
 }
+
 
 const ordersDef: IOrderDef[] = [
     {
@@ -176,5 +182,6 @@ const ordersDef: IOrderDef[] = [
 export const orders: IOrder[] = makeOrders(ordersDef);
 
 export function getNextOrderNumber(): string {
+    console.log(orders);
     return (orders.reduce((prev, curr) => Math.max(prev, parseFloat(curr.number)), 0) + 1).toString();
 }

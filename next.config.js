@@ -8,4 +8,10 @@ module.exports = {
         locales: ['en', 'ru', 'ar'],
         defaultLocale: 'en',
     },
+    webpack: (config) => {
+        config.experiments = {
+          topLevelAwait: true,  // Enable top-level await
+        };
+        return config;
+      },
 };

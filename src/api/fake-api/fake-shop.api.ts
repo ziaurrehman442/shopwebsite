@@ -19,23 +19,16 @@ import {
     ShopApi,
 } from '~/api/base';
 import {
-    addProductReview,
-    checkout,
     getCategories,
     getCategoryBySlug,
-    getFeaturedProducts,
-    getLatestProducts,
-    getPopularProducts,
-    getProductAnalogs,
-    getProductBySlug,
-    getProductReviews,
-    getProductsList,
-    getRelatedProducts,
-    getSearchSuggestions,
-    getSpecialOffers,
-    getTopRatedProducts,
+    getSearchSuggestions
 } from '~/fake-server/endpoints';
 
+import {checkout} from "~/fake-server/endpoints/checkout"
+import {getFeaturedProducts,getRelatedProducts,
+    addProductReview,
+    getProductsList,
+    getProductReviews, getSpecialOffers,getProductAnalogs, getLatestProducts, getTopRatedProducts, getPopularProducts,getProductBySlug} from "~/fake-server/endpoints/products"
 export class FakeShopApi implements ShopApi {
     getCategoryBySlug(slug: string, options?: IGetCategoryBySlugOptions): Promise<IShopCategory> {
         return getCategoryBySlug(slug, options);
@@ -74,6 +67,7 @@ export class FakeShopApi implements ShopApi {
     }
 
     getFeaturedProducts(categorySlug: string | null, limit: number): Promise<IProduct[]> {
+        console.log(getFeaturedProducts,categorySlug,limit);
         return getFeaturedProducts(categorySlug, limit);
     }
 

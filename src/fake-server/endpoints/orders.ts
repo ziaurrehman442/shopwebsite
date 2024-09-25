@@ -5,7 +5,7 @@ import { IOrder } from '~/interfaces/order';
 import { orders } from '~/fake-server/database/orders';
 
 export function getOrdersList(options?: IListOptions): Promise<IOrdersList> {
-    let items: IOrder[] = JSON.parse(JSON.stringify(orders));
+    let items: IOrder[] = JSON.parse(JSON.stringify(orders || []));
 
     const limit = options?.limit || 8;
     const sort = options?.sort || 'default';

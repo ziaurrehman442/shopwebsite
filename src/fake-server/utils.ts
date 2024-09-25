@@ -25,8 +25,39 @@ export function clone(data: any): any {
     return JSON.parse(JSON.stringify(data));
 }
 
-export function nameToSlug(name: string): string {
-    return name.toLowerCase().replace(/[^a-z0-9]/, '-').replace(/-+/, '-');
+export function nameToSlug(input: string | { name: string } | Array<{ name: string }>): string | string[] {
+    const slugify = (name: string): string => {
+        if (typeof name !== 'string') {
+            return ''; // Return empty string if the name is not a valid string
+        }
+        return name.toLowerCase().replace(/\s+/g, '-'); // Example slugification
+    };
+
+    if (Array.isArray(input)) {
+        // If input is an array, map to slugs
+        return input.map(item => {
+            if (item && typeof item.name === 'string') {
+                return slugify(item.name);
+            } else {
+                console.warn('Invalid item in array:', item);
+                return ''; // Handle invalid items gracefully
+            }
+        });
+    } else if (typeof input === 'object' && input !== null) {
+        // If input is an object, check for the name property
+        if (typeof input.name === 'string') {
+            return slugify(input.name);
+        } else {
+            console.warn('Invalid object, name property is missing or not a string:', input);
+            return ''; // Handle the case where name is missing or invalid
+        }
+    } else if (typeof input === 'string') {
+        // If input is a string, directly slugify it
+        return slugify(input);
+    } else {
+        console.warn('Input is neither an object, array, nor a string:', input);
+        return ''; // Handle unexpected input types
+    }
 }
 
 export function makePageBasedNavigation<T>(items: T[], limit: number, page: number): [T[], IPageBasedNavigation] {
