@@ -206,8 +206,8 @@ export async function getAddresses(): Promise<IAddress[]> {
         }
 
         const data = await response.json();
-        
-        return data.addresses;
+        const addressesnew = data.addresses? data.addresses  : null;
+        return addressesnew;
     } catch (err) {
         return Promise.reject(err);
     }
@@ -220,7 +220,7 @@ export async function addAddress(data: Partial<IEditAddressData>): Promise<IAddr
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`, // Ensure token is correct
+                'Authorization': `${localStorage.getItem('email')}`, // Ensure token is correct
             },
             body: JSON.stringify(data),
         });
@@ -243,7 +243,7 @@ export async function editAddress(addressId: number, data: IEditAddressData): Pr
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`, // Ensure token is correct
+                'Authorization': `${localStorage.getItem('email')}`, // Ensure correct usage of email for authorization
             },
             body: JSON.stringify(data),
         });
@@ -258,6 +258,7 @@ export async function editAddress(addressId: number, data: IEditAddressData): Pr
         return Promise.reject(err);
     }
 }
+
 
 // Delete an address by ID
 export async function delAddress(addressId: number): Promise<void> {

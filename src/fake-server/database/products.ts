@@ -82,6 +82,82 @@ function resolveProductAttributesDef(attributesDef: IProductAttributesDef): IPro
 function makeProducts(defs: IProductDef[]): IProduct[] {
     return defs.map((def) => {
         let badges;
+        let option = [];
+       
+async function createOptions(def) {
+    // Check for materials
+    if (def.materials) {
+        const materials = Object.values(def.materials || []);
+
+        // Create the material option
+        const materialOption = {
+            type: 'default',
+            slug: 'material',
+            name: 'Material',
+            values: materials.map((material) => ({
+                name: material.label,
+                slug: nameToSlug(material.label),
+            })),
+        };
+
+        // Append material option to options array
+        option.push(materialOption);
+    }
+
+    // Hardcoded color hex mapping
+    const colorHexMap = {
+        red: '#FF0000',
+        blue: '#0000FF',
+        green: '#008000',
+        yellow: '#FFFF00',
+        black: '#000000',
+        white: '#FFFFFF',
+    };
+
+    // Check for colors
+    if (def.colors) {
+        const colors = Object.values(def.colors || []);
+
+        // Create the color option
+        const colorOption = {
+            type: 'color',
+            slug: 'color',
+            name: 'Color',
+            values: [],
+        };
+
+        // Map colors to their hex values using the hardcoded map
+        const resolvedColors = colors.map((color) => ({
+            name: color.label,
+            slug: nameToSlug(color.label),
+            color: colorHexMap[color.value] || '#000000', // Fallback to black if not found
+        }));
+
+        colorOption.values = resolvedColors;
+
+        // Append color option to options
+        option.push(colorOption);
+    }
+
+    return option; // Return the assembled options array
+}
+
+// Call the function with your `def` object
+createOptions(def)
+    .then((options) => {
+        console.log(options); // Do something with the options
+    })
+    .catch((error) => {
+        console.error('Error creating options:', error);
+    });
+        
+        
+        // The options array now contains both material and color options
+        console.log(option);
+        // let materialsection = def.materials.map(material => ({
+        //     value: material.slug,
+        //     label: material.name,
+        // }));
         if (def.badges) {
             if (typeof def.badges === 'string') {
                 badges = [def.badges];
@@ -109,7 +185,7 @@ function makeProducts(defs: IProductDef[]): IProduct[] {
 
         // Ensure that the stock is one of the allowed IProductStock values
         const stock: IProductStock = def.availability as IProductStock || 'in-stock';
-
+        console.log(def);
         return {
             id: def.id || getNextId(),
             name: def.name,
@@ -117,7 +193,7 @@ function makeProducts(defs: IProductDef[]): IProduct[] {
             description: def.description,
             slug: def.slug,
             sku: def.sku,
-            partNumber: def.partNumber || 'BDX-750Z370-S',
+            partNumber: def.part_number || 'BDX-750Z370-S',
             stock,  // Now the stock is directly of type IProductStock
             price: def.price,
             compareAtPrice: def.compareAtPrice || null,
@@ -159,29 +235,7 @@ function makeProducts(defs: IProductDef[]): IProduct[] {
             attributes: resolveProductAttributesDef({
                 ...def.attributes,
             }),
-            options: [
-                {
-                    type: 'default',
-                    slug: 'material',
-                    name: 'Material',
-                    values: [
-                        { slug: 'steel', name: 'Steel' },
-                        { slug: 'aluminium', name: 'Aluminium' },
-                        { slug: 'thorium', name: 'Thorium' },
-                    ],
-                },
-                {
-                    type: 'color',
-                    slug: 'color',
-                    name: 'Color',
-                    values: [
-                        { slug: 'white', name: 'White', color: '#fff' },
-                        { slug: 'yellow', name: 'Yellow', color: '#ffd333' },
-                        { slug: 'red', name: 'Red', color: '#ff4040' },
-                        { slug: 'blue', name: 'Blue', color: '#4080ff' },
-                    ],
-                },
-            ],
+            options: option,
             tags: def.tags || [],
             categories,
             customFields: def.customFields || {},

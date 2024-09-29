@@ -21,11 +21,10 @@ import {
     editAddress,
     getAddress,
     getAddresses,
-    getDefaultAddress,
-    getOrderById,
+    getDefaultAddress
 } from '~/fake-server/endpoints';
 
- import {getOrderByToken,getOrdersList} from "~/fake-server/endpoints/orders"
+ import {getOrderByToken,    getOrderById,getOrdersList} from "~/fake-server/endpoints/orders"
 export class FakeAccountApi extends AccountApi {
     signIn(email: string, password: string): Promise<IUser> {
         return accountSignIn(email, password);

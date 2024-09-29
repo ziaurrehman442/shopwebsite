@@ -15,7 +15,13 @@ import { IAddress } from '~/interfaces/address';
 function Page() {
     const intl = useIntl();
     const [addresses, setAddresses] = useState<IAddress[]>([]);
-
+    let newaddress : string[];
+    if(addresses == null){
+        newaddress=[];
+    }
+    else{
+        newaddress=addresses;
+    }
     const delAddress = async (addressId: number) => {
         await accountApi.delAddress(addressId);
         await accountApi.getAddresses().then(setAddresses);
@@ -48,8 +54,7 @@ function Page() {
                 </div>
             </AppLink>
             <div className="addresses-list__divider" />
-
-            {addresses.map((address, index) => (
+            {newaddress.map((address, index) => (
                 <React.Fragment key={index}>
                     <AsyncAction
                         action={() => delAddress(address.id)}

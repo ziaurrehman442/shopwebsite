@@ -1,6 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-
-// application
+import axios from 'axios';
 import { delayResponse } from '~/fake-server/utils';
 import { ICheckoutData } from '~/api/base';
 import { IOrder, IOrderItem, IOrderTotal } from '~/interfaces/order';
@@ -11,6 +9,9 @@ import {
     getOrderToken,
     orders,
 } from '~/fake-server/database/orders';
+
+// Backend API URL for order submission
+const BACKEND_API_URL = 'http://localhost:5000/api/orders'; // Replace with your actual backend URL
 
 export function checkout(data: ICheckoutData): Promise<IOrder> {
     const id = getNextOrderId();
@@ -63,7 +64,36 @@ export function checkout(data: ICheckoutData): Promise<IOrder> {
         shippingAddress: data.shippingAddress,
     };
 
+    // Add the order to the local orders list
     orders.unshift(order);
 
+    console.log(orders); // For debugging
+
+    // Send the order data to the backend after it is unshifted to orders
+    const email = localStorage.getItem('email'); // Get the email from localStorage
+
+    if (!email) {
+        throw new Error('User is not authenticated.');
+    }
+    axios.post(
+        BACKEND_API_URL,
+        order, // Send the created order object to the backend
+        {
+            headers: {
+                Authorization: `${email}`, // Send the email as a token in the Authorization header
+                'Content-Type': 'application/json', // Set the content type to JSON
+            },
+        }
+    )
+    .then((response) => {
+        console.log('Order successfully sent to the backend:', response.data);
+        return delayResponse(Promise.resolve(order)); // Return the order on success
+    })
+    .catch((error) => {
+        console.error('Failed to send order to the backend:', error);
+        throw error;
+    });
+    // Make the API request to the backend to store the order
     return delayResponse(Promise.resolve(order));
 }
+
